@@ -59,7 +59,7 @@ object Interval {
   def empty: Closed                         = Empty
   def until(start: Long, end: Long): Closed = Interval(start, Size(end - start))
   def to(start: Long, end: Long): Closed    = Interval(start, Size(end - start + 1))
-  def point(start: Long): Closed            = Interval(start, start + 1)
+  def point(start: Long): Closed            = Interval(start, 1L)
 
   final case class Closed private[Interval] (startLong: Long, size: Precise) extends Interval {
     type This = Closed
